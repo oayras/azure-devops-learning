@@ -1,0 +1,24 @@
+resources:
+  pipelines:
+
+  - pipeline: MyAppA
+    source: MyCIPipelineA
+
+  - pipeline: MyAppB
+    source: MyCIPipelineB
+    trigger: true
+
+  - pipeline: MyAppC
+    project:  DevOpsProject
+    source: MyCIPipelineC
+    branch: releases/M159
+    version: 20190718.2
+    trigger:
+      branches:
+        include:
+
+        - master
+        - releases/*
+        exclude:
+
+        - users/*

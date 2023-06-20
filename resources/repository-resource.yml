@@ -1,0 +1,7 @@
+resources:
+  repositories:
+
+  - repository: common
+    type: github
+    name: Contoso/CommonTools
+    endpoint: MyContosoServiceConnection

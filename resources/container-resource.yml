@@ -1,0 +1,19 @@
+resources:
+  containers:
+
+  - container: linux
+    image: ubuntu:16.04
+
+  - container: windows
+    image: myprivate.azurecr.io/windowsservercore:1803
+    endpoint: my_acr_connection
+
+  - container: my_service
+    image: my_service:tag
+    ports:
+
+    - 8080:80 # bind container port 80 to 8080 on the host machine
+    - 6379 # bind container port 6379 to a random available port on the host machine
+    volumes:
+
+    - /src/dir:/dst/dir # mount /src/dir on the host into /dst/dir in the container
